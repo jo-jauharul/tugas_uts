@@ -1,0 +1,75 @@
+name: flutter_app
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.2 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_svg: ^2.0.10+1
+
+flutter:
+  uses-material-design: true
+  assets:
+  - assets/images/oval_1.png
+  - assets/vectors/wifi_2_x2.svg
+  - assets/vectors/oval_3_x2.svg
+  - assets/vectors/mobile_signal_2_x2.svg
+  - assets/vectors/battery_2_x2.svg
+  - assets/vectors/instagram_logo_x2.svg
+  - assets/images/inner_oval_3.png
+  - assets/images/inner_oval_1.png
+  - assets/images/oval.png
+  - assets/images/inner_oval.png
+  - assets/images/rectangle.png
+  - assets/images/oval_1.png
+  - assets/images/inner_oval_2.png
+  - assets/vectors/oval_5_x2.svg
+  - assets/vectors/shape_3_x2.svg
+  - assets/vectors/shape_x2.svg
+  - assets/vectors/wifi_1_x2.svg
+  - assets/vectors/shape_7_x2.svg
+  - assets/vectors/oval_7_x2.svg
+  - assets/vectors/shape_4_x2.svg
+  - assets/vectors/profile_image_x2.svg
+  - assets/vectors/profile_image_1_x2.svg
+  - assets/vectors/shape_9_x2.svg
+  - assets/vectors/oval_copy_x2.svg
+  - assets/vectors/profile_image_3_x2.svg
+  - assets/vectors/igtv_x2.svg
+  - assets/vectors/inner_oval_4_x2.svg
+  - assets/vectors/shape_1_x2.svg
+  - assets/vectors/shape_6_x2.svg
+  - assets/vectors/profile_image_2_x2.svg
+  - assets/vectors/mobile_signal_x2.svg
+  - assets/vectors/oval_4_x2.svg
+  - assets/vectors/shape_12_x2.svg
+  - assets/vectors/shape_8_x2.svg
+  - assets/vectors/instagram_logo_1_x2.svg
+  - assets/vectors/shape_11_x2.svg
+  - assets/vectors/battery_x2.svg
+  - assets/vectors/shape_13_x2.svg
+  - assets/vectors/oval_6_x2.svg
+  - assets/vectors/shape_2_x2.svg
+  - assets/vectors/oval_2_x2.svg
+  - assets/vectors/oval_8_x2.svg
+  - assets/vectors/line_1_x2.svg
+  - assets/vectors/instagram_logo_2_x2.svg
+  - assets/vectors/wifi_x2.svg
+  - assets/vectors/shape_5_x2.svg
+  - assets/vectors/shape_10_x2.svg
+  - assets/vectors/battery_1_x2.svg
+  - assets/vectors/mobile_signal_1_x2.svg
+  - assets/vectors/line_x2.svg
+
