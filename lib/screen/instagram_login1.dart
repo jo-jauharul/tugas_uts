@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'home.dart';
 import 'statusbar.dart';
+
+final supabase = Supabase.instance.client;
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -46,25 +48,31 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Input Username
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: TextField(
-                    controller: _usernameController,
-                    decoration: InputDecoration(
-                      labelText: 'Username',
-                      border: OutlineInputBorder(),
-                    ),
+                  child: const Text(
+                    'Email',
+                  ),
+                ),
+                TextField(
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    labelText: 'Username',
+                    border: OutlineInputBorder(),
                   ),
                 ),
                 SizedBox(height: 10.0),
                 // Input Password
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: TextField(
-                    controller: _passwordController,
-                    obscureText: true, // Untuk menyembunyikan teks password
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
-                    ),
+                  child: const Text(
+                    'Password',
+                  ),
+                ),
+                TextField(
+                  obscureText: true,
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(),
                   ),
                 ),
                 SizedBox(height: 10.0),
@@ -97,11 +105,17 @@ class _LoginScreenState extends State<LoginScreen> {
                             8.0), // Membulatkan sudut tombol
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()),
-                      );
+                    onPressed: () async {
+                      final authResponse = await supabase.auth
+                          .signInWithPassword(
+                              email: _usernameController.text,
+                              password: _passwordController.text);
+                      if (authResponse.user != null) {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
+                      }
                     },
                     child: Text(
                       'Log In',
